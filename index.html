@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Pangolin" rel="stylesheet">
+    <title>Memotest</title>
+</head>
+<body>
+    
+    <div class="main-container">
+        <div id="homeMenu" class="home show">
+            <div class="title">
+                <h1>Memotest</h1>
+                <p>Hola👋! Vamos a jugar al memotest</p>
+                <p>Pero antes de empezar...</p>
+                <p>Cual es tu nombre❓</p>
+                <input id="nameInput" type="text" maxlength="10" placeholder="Sofia">
+            </div>
+            <div class="difficult-button">
+                <p>Con que dificultad te gustaria jugar?</p>
+                <button id="easyBut" class="dif-but">Facil</button>
+                <button id="normalBut" class="dif-but">Intermedio</button>
+                <button id="hardBut" class="dif-but">Experto</button>
+            </div>
+            <div class="name-error hidden">
+                <p><span>UPSS...</span>El nombre es requerido</p>
+            </div>
+        </div>    
+        <div id="boardCont" class="board-cont hidden">
+            <h1>Memotest</h1>
+            <p class="hi">Hola <span id="name-sel"></span></p>
+            <p>Encontra todos los pares en menos de <span id="tries-sel"></span> intentos</p>
+            <p>Nivel</p>
+            <p id="dif-sel"></p>
+            <div class="board">
+                <div class="box flipper" id="1">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img  class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="2">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="3">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img  class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="4">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="5">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="6">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="7">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="8">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="9">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="10">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="11">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+                <div class="box flipper" id="12">
+                    <div class="front-img"><img src="images/tapada.jpg" class="left-shadow"></div>
+                    <div class="back-img hidden"><img class="img right-shadow" src="#"></div>
+                </div>
+            </div>
+            <div class="tries">Intentos: <span id="tries"></span></div>
+        </div>
+    </div>
+    <div class="win-lose hidden">
+        <p class="you-won hidden">GANASTE!🎉 con <span id="triesSpan"></span> intentos</p>
+        <p class="you-lose hidden">Perdiste 😔</p>
+        <p>Ya podes volver a jugar</p>
+        <button id="playAgainBut">Volver a jugar</button>
+        <div class="player-info show">
+            <div class="player-name">
+                <p>NOMBRE</p>
+            </div>
+            <div class="player-level">
+                <p>NIVEL</p>
+            </div>
+            <div class="player-tries">
+                <p>INTENTOS</p>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
+<script src="index.js"></script>
+</body>
+</html>

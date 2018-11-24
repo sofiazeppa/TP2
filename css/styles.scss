@@ -1,0 +1,286 @@
+$orange : rgb(253, 151, 39);
+$lightOrange : rgb(248, 166, 58);
+$lightBlue : rgb(63, 173, 211);
+$lightPink: rgb(249, 233, 244);
+
+@mixin styleH1 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: $lightBlue;
+}
+
+@mixin imgStyle {
+    height: 150px;
+    border: 1px solid $orange;
+}
+
+@mixin buttonStyle {
+    font-family: 'Pangolin', cursive;
+    background-color: $orange ;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 3%;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:focus {
+        outline-color: hotpink;
+    }
+    &:hover {
+        background-color: $lightOrange;
+    }
+}
+
+body {
+    background-image: url(../images/fondo.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    font-family: 'Pangolin', cursive;
+    font-size: 15px;
+}
+
+// ocultar
+.hidden {
+    display: none;
+}
+// mostrar
+.show {
+    display: flex;
+}
+// blanco-negro
+.matched {
+    filter: grayscale(100%);
+}
+// opacidad
+.opacity {
+    opacity: 0.5;
+}
+// no poder clickear
+.disableClick {
+    pointer-events: auto;
+}
+// animacion del flip 
+.flipper {
+    cursor: pointer;
+    &:active {
+        transition: transform 0.4s;
+        transform-style: preserve-3d;
+        transform: rotateY(180deg);
+    }
+}
+// sombra izquierda
+.left-shadow {
+    &:hover {
+        box-shadow: -10px 10px 10px -5px rgba(156,156,156,1);
+    }
+}
+// sombra derecha
+.right-shadow {
+    &:hover {
+        box-shadow: 10px 10px 10px -5px rgba(156,156,156,1);
+    }
+}
+
+
+.main-container {
+    border: black solid 13px;
+    border-radius: 22px;
+    background-color: $lightPink;
+    display: flex;
+    flex-direction: column;
+    margin: 1% 10%;
+}
+
+.home {
+    flex-direction: column;
+    padding: 10%;
+    padding-top: 0;
+    max-width: 100%;
+    .title {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        }
+        h1 {
+            @include styleH1;
+            margin-bottom: 0;
+        }
+        p {
+            margin: 0;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            margin: 3%;
+            font-family: 'Pangolin', cursive;
+            color: black;
+            &:focus {
+                outline-color: hotpink;
+            }
+        }
+    .difficult-button {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            text-align: center;
+            margin-bottom: 1%;
+        }
+        button {
+            @include buttonStyle;
+            width: 300px;
+            margin: 1%;
+        }
+    }
+}
+
+// error del nombre vacio
+.name-error {
+    background-color: rgb(232, 196, 196);
+    color: rgb(167, 69, 68);
+    padding: 3%;
+    width: 93%;
+    margin-top: 4%;
+    align-self: center;
+    justify-content: center;
+    border-radius: 3px;
+    span {
+        font-weight: bold;
+    }
+}
+
+// tablero
+.board-cont {
+    flex-direction: column;
+    padding: 0 18%;
+    h1 {
+        @include styleH1;
+        margin: 0;
+    }
+    p {
+        margin: 0;
+        text-align: center;
+    }
+    .hi {
+        font-size: 18px;
+    }
+    #tries-sel {
+        color: $lightBlue;
+    }
+    #dif-sel {
+        text-transform: uppercase;
+    }
+    .board {    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        perspective: 1000px;
+    }
+    .tries {
+        font-family: initial;
+        font-weight: bold;
+        text-align: center;
+        background: white;
+        border: solid 5px $lightBlue;
+        border-radius: 7px;
+        margin-bottom: 1%;  
+        padding: 1.5%;
+    }
+    #tries {
+        color: $orange;
+    }
+}
+
+// imagenes del tablero
+.box {
+    margin: 1% 0;        
+    .front-img, .back-img {
+        img {
+            @include imgStyle;
+        }
+    }
+}
+
+// cartel de perdiste/ganaste
+.win-lose {
+    border: black solid 5px;
+    border-radius: 10px;
+    background-color: $lightPink;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    width: 20%;
+    padding: 2%;
+    padding-bottom: 5%;
+    position: absolute;
+    top: 10%;
+    p {
+        margin: 0;
+    }
+    #playAgainBut {
+        @include buttonStyle;
+        margin: 5%;
+        width: 50%;
+    }
+    .player-info {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 50%;
+        margin: 2%;
+        div {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 1% 10%;
+            text-align: center;
+            width: 100%; 
+            p {
+                white-space: nowrap;
+                padding: 2% 4%;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .main-container {
+        width: auto;
+    }
+    // home
+    .home {
+        .difficult-button {
+            button {
+                width: 100%;
+            }
+        }
+    }
+    // tablero
+    .board-cont {
+        padding: 0;
+        .board {    
+            justify-content: center;
+            .box {
+                width: 26%;
+                margin: 2%;
+                img {
+                    height: 75px;
+                }
+            }
+        }
+    }
+    // cartel perdiste/ganaste
+    .win-lose {
+        width: 90%;
+        p {
+            margin: 0;
+        }
+        .player-info {
+            margin: 0;
+            width: 90%; 
+        }
+    }
+}
