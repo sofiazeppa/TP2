@@ -34,6 +34,7 @@ $(".dif-but").on("click", function() {
     var startButton = $(this).attr("id");
 
     startGame();
+    placeImg();
     flipBoxes();
 
     if (startButton == "easyBut") {
@@ -201,7 +202,6 @@ function placeImg() {
         i++
     })
 }
-placeImg();
 
 // contador de clicks
 function clickCounter() {
