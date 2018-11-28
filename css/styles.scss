@@ -51,14 +51,15 @@ body {
 // blanco-negro
 .matched {
     filter: grayscale(100%);
+    pointer-events: none;
 }
 // opacidad
 .opacity {
     opacity: 0.5;
 }
-// no poder clickear
+// desactiva el click
 .disableClick {
-    pointer-events: auto;
+    pointer-events: none;
 }
 // animacion del flip 
 .flipper {
