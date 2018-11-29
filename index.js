@@ -102,26 +102,28 @@ function flipBoxes() {
                 triesCounter();
                 
                 if ( click1.src == click2.src ) {
+                    clicks = 0
                     $(click1.element).addClass("matched");
                     $(click2.element).addClass("matched");
+
                 } else {
                     setTimeout(function() {
                         $(click1.element).children(".front-img").removeClass("hidden");
                         $(click1.element).children(".back-img").addClass("hidden");
                         $(click2.element).children(".front-img").removeClass("hidden");
                         $(click2.element).children(".back-img").addClass("hidden");
+                        clicks = 0
                     }, 500);
                 }
-                checkWinningCondition();
-                clicks = 0   
-            
+
+                checkWinningCondition();   
             } else {
                 clicks = 1;
             }
         } else if (clicks == 1) {
             click1.src = $(this).children(".back-img").children("img")[0].src;
             click1.element = $(this);
-        }              
+        }               
     })
 }
 
