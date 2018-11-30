@@ -91,6 +91,7 @@ $(".dif-but").on("click", function() {
 // girar las cartas
 function flipBoxes() {
     $(".box").on("click", function(event) {
+        $(this).removeClass("flipper");
         $(this).children(".front-img").addClass("hidden");
         $(this).children(".back-img").removeClass("hidden");
         clickCounter();
@@ -112,6 +113,8 @@ function flipBoxes() {
                         $(click1.element).children(".back-img").addClass("hidden");
                         $(click2.element).children(".front-img").removeClass("hidden");
                         $(click2.element).children(".back-img").addClass("hidden");
+                        $(click1.element).addClass("flipper");
+                        $(click2.element).addClass("flipper");
                         clicks = 0
                     }, 500);
                 }
