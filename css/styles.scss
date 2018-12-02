@@ -260,6 +260,11 @@ footer {
     .main-container {
         width: auto;
     }
+    .left-shadow , .right-shadow {
+        &:hover {
+            box-shadow: none;
+        }
+    }
     // home
     .home {
         .difficult-button {

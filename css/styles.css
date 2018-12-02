@@ -247,6 +247,10 @@ footer a {
     width: auto;
   }
 
+  .left-shadow:hover, .right-shadow:hover {
+    box-shadow: none;
+  }
+
   .home .difficult-button button {
     width: 100%;
   }
