@@ -31,9 +31,15 @@ $lightPink: rgb(249, 233, 244);
     }
 }
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
     background-image: url(../images/fondo.jpg);
     background-size: cover;
+    height: 100%;
     display: flex;
     justify-content: center;
     font-family: 'Pangolin', cursive;
@@ -90,7 +96,8 @@ body {
     background-color: $lightPink;
     display: flex;
     flex-direction: column;
-    margin: 1% 10%;
+    margin: 10%;
+    margin-top: 1%;
 }
 .home {
     flex-direction: column;
@@ -177,6 +184,7 @@ body {
         flex-wrap: wrap;
         justify-content: space-around;
         perspective: 1000px;
+        margin: 1.5%;
     }
     .tries {
         font-family: initial;
@@ -237,10 +245,10 @@ body {
 
 footer {
     background-color: $lightPink;
-    width: 100%;
     text-align: center;
+    width: 100%;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     a {
         text-decoration: none;
         color: black;

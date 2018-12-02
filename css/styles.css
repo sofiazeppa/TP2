@@ -1,6 +1,12 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   background-image: url(../images/fondo.jpg);
   background-size: cover;
+  height: 100%;
   display: flex;
   justify-content: center;
   font-family: "Pangolin", cursive;
@@ -51,7 +57,8 @@ body {
   background-color: #f9e9f4;
   display: flex;
   flex-direction: column;
-  margin: 1% 10%;
+  margin: 10%;
+  margin-top: 1%;
 }
 
 .home {
@@ -155,6 +162,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   perspective: 1000px;
+  margin: 1.5%;
 }
 .board-cont .tries {
   font-family: initial;
@@ -224,10 +232,10 @@ body {
 
 footer {
   background-color: #f9e9f4;
-  width: 100%;
   text-align: center;
+  width: 100%;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 }
 footer a {
   text-decoration: none;
