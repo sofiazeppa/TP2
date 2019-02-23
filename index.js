@@ -73,28 +73,31 @@ $(".dif-but").on("click", function() {
     startGame();
     placeImg();
     flipBoxes();
+
+    function setDif(n, dif) {
+        maxMoves = n;
+        $("#tries-sel").html(maxMoves);
+        $("#dif-sel").html(dif);
+    }
+
     if (startButton == "easyBut") {
-        maxMoves = 18;
-        $("#tries-sel").html(maxMoves);
-        $("#dif-sel").html("FACIL");  
+        setDif(18, "FACIL");
     } else if (startButton == "normalBut") {
-        maxMoves = 12;
-        $("#tries-sel").html(maxMoves);
-        $("#dif-sel").html("INTERMEDIO");
+        setDif(12, "INTERMEDIO");
     } else if (startButton == "hardBut") {
-        maxMoves = 9;
-        $("#tries-sel").html(maxMoves);
-        $("#dif-sel").html("EXPERTO");
+        setDif(9, "EXPERTO");
     }
 })
 
 // girar las cartas
 function flipBoxes() {
-    $(".box").on("click", function(event) {
+    $(".box").on("click", function() {
         $(this).removeClass("flipper");
         $(this).children(".front-img").addClass("hidden");
         $(this).children(".back-img").removeClass("hidden");
         clickCounter();
+
+        
         if ( clicks == 2 ) {
             click2.src = $(this).children(".back-img").children("img")[0].src;
             click2.element = $(this);
@@ -134,11 +137,7 @@ function flipBoxes() {
 function checkWinningCondition() {
     var matchedList = $(".matched").length;
     if( tries == maxMoves ) {
-        if (matchedList != 12) {
-            youLost();
-        } else {
-            youWon();
-        }
+        matchedList != 12 ? youLost() : youWon()
     } else if ( tries <= maxMoves ) {
         if (matchedList == 12) {
             youWon();
